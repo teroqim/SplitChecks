@@ -1,7 +1,7 @@
 #! /usr/local/bin/python
 
 #Documentation
-"Program used to calculate who owns who how much money"
+"""Program used to calculate debts"""
 
 #Imports
 import sys
