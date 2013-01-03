@@ -33,3 +33,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#Pycharm files, right now ignore all of them, but this should maybe change..
+.idea/
