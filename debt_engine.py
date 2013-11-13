@@ -10,28 +10,15 @@ which areas there are of the problem.
 
 #Classes
 
-
-class Person(object):
-    def __init__(self, name):
-        if not name:
-            raise ValueError('Must give name')
-        self.name = name
-        self.debts = dict()
-
-    def add_dept(self, person, sum):
-        self.debts[person] = sum
-
 class Check(object):
     """
     Represents a payment for some check. It has information about who paid what and which people should share it.
 
     Example usage:
     payment = Payment('myGroup')
-    payment.add_payer(('alice', 100.0), ('bob', 100.0))
+    payment.add_payments(('alice', 100.0), ('bob', 100.0))
     payment.add_sharers('alice', 'bob', 'cecil')
 
-    TODO:
-    * Input guards for methods
     """
     def __init__(self, debt_group_id, description = ''):
         if not debt_group_id:
@@ -111,7 +98,7 @@ class DebtGroup(object):
                 * Calculate each sharers share (in money)
                 * Reduce the intersection of payers and sharers:
                     For each payer in intersection:
-                        if payer's sum > sharers share
+                        if payers sum > sharers share
                             remove sharer and set payer's sum -= sharers share
                         else
                             remove payer and set sharers sum -= payers sum
